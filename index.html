@@ -120,9 +120,12 @@ https://www.bilibili.com/video/xxx"></textarea>
                 const response = await fetch(api, {
                     method: 'POST',
                     headers: headers,
-                    body: JSON.stringify({inputs: {video_urls: urls}})
-                    user: "default-user" 
-                });
+                    body: JSON.stringify({
+                        inputs: {
+                            video_urls: urls
+                    },
+                    user: "default-user"   
+                    })
                 
                 const data = await response.json();
                 resultDiv.textContent = JSON.stringify(data, null, 2);
